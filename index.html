@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset='utf-8'/>
+		<title>test page</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+		<style>
+			* {margin:0; padding:0; font-family: 'Oswald', sans-serif;}
+			ul,ol {list-style:none;}
+			a {text-decoration:none; color:black;}
+			.bodytext {font-family: 'Nanum Gothic', sans-serif; line-height:28px;}
+			header .gnb {height:60px;  position:relative; 
+				  box-shadow:5px 0px 5px 3px #353535; background:white; z-index:99;}
+			header .gnb .snsWrap {position:absolute; top:15px; left:28px;}
+			header .gnb i {font-size:28px; margin-left:12px;}
+			header .gnb .logo {width:45px; position:absolute; top:5px; left:50%; transform:translateX(-50%);}
+			header .gnb ul {position:absolute; top:5px; right:30px; line-height:40px;}
+			header .gnb ul li {float:left; margin-right:28px; font-size:24px;}
+			header .gnb ul li a:hover {color:orange;}
+			
+			header .contain {background:black; height:100vh; margin-top:-60px;}
+			header .p1 {position:absolute; top:50%; left:50%; 
+					    transform:translateX(-50%) translateY(-50%); 
+						opacity:.2; z-index:1;}
+			header .filter {width:100%; height:100vh; background:url('./images/g1.png') no-repeat 50% 50%;
+							background-size:cover; opacity:.8; z-index:50;}
+			header .contain video {height:100vh; position:absolute; top:0; left:50%; z-index:0; transform:translateX(-50%);}
+			header .contain .textwrap {text-align:center; color:#353535;
+									   position:absolute; top:50%; left:50%; 
+									   transform:translateX(-50%) translateY(-50%); z-index:2;}
+			header .contain .textwrap .title {font-size:80px; font-weight:bold;}						   
+			header .contain .textwrap .subtitle {font-size:40px;}
+			header .contain .textwrap i {font-size:40px; margin-top:40px;}
+			section a {color:white;}
+			.sec1 {width:100%; height:100vh; position:relative;
+				   background:url('./images/b1.png') no-repeat 50% 50%;
+				   background-size:cover;}
+			.sec1 .filter {width:100%; height:100vh; background:url('./images/g2.png') no-repeat 50% 50%;
+							background-size:cover; opacity:.8; z-index:50;}	 
+			.sec1 .solid {width:50%; height:100vh; position:absolute; top:0; opacity:.4; background:#5fb971;}
+			.sec1 .textwrap {position:absolute; top:50%; left:25%; text-align:right; color:#353535;
+							 transform:translateX(-50%) translateY(-50%);}
+			.sec1 .textwrap .title {font-weight:bold; font-size:80px;}
+			.sec1 .textwrap .subtitle {font-size:48px; margin-bottom:40px;}
+			.sec1 .textwrap .more {font-size:32px; border:3px solid white; color:white;
+								   display:inline; padding:0px 30px 5px 30px; border-radius:5px;
+								   }
+			.sec1 .subtextwrap {position:absolute; top:50%; left:75%; color:#ccc;
+							 transform:translateX(-50%) translateY(-50%);}
+			.sec1 .subtextwrap .title{font-size:44px;}
+			.sec1 .bodytext {width:400px; font-size:16px;}
+			
+			.sec2 {width:100%; height:100vh; position:relative;
+				   background:url('./images/b2.png') no-repeat 50% 50%;
+				   background-size:cover;}
+			.sec2 .filter {width:100%; height:100vh; background:url('./images/g3.png') no-repeat 50% 50%;
+							background-size:cover; opacity:.8; z-index:50;}	 
+			.sec2 .solid {width:50%; height:100vh; position:absolute; top:0; right:0; opacity:.4; background:#417ec0;}
+			.sec2 .textwrap {position:absolute; top:50%; left:75%; color:#353535;
+							 transform:translateX(-50%) translateY(-50%);}
+			.sec2 .textwrap .title {font-weight:bold; font-size:72px;margin-bottom:10px;}
+			.sec2 .textwrap .subtitle {font-size:48px; margin-bottom:40px;}
+			.sec2 .textwrap .more {font-size:32px; border:3px solid white; color:white;
+								   display:inline; padding:0px 30px 5px 30px; border-radius:5px;
+								   }
+			.sec2 .subtextwrap {position:absolute; top:50%; left:25%; color:#ccc;  text-align:right;
+							 transform:translateX(-50%) translateY(-50%);}
+			.sec2 .subtextwrap .title{font-size:44px;}
+			.sec2 .bodytext {width:400px; font-size:16px;}
+			
+			.sec3 {width:100%; height:100vh; position:relative;
+				   background:url('./images/b3.png') no-repeat 50% 50%;
+				   background-size:cover;}
+			.sec3 .filter {width:100%; height:100vh; background:url('./images/g4.png') no-repeat 50% 50%;
+							background-size:cover; opacity:.8; z-index:50;}	 
+			.sec3 .solid {width:50%; height:100vh; position:absolute; top:0; opacity:.4; background:#3e82c3;}
+			.sec3 .textwrap {position:absolute; top:50%; left:25%; color:#353535; text-align:right;
+							 transform:translateX(-50%) translateY(-50%);}
+			.sec3 .textwrap .title {font-weight:bold; font-size:72px; margin-bottom:10px;}
+			.sec3 .textwrap .subtitle {font-size:32px; margin-bottom:40px;}
+			.sec3 .textwrap .more {font-size:32px; border:3px solid white; color:white;
+								   display:inline; padding:0px 30px 5px 30px; border-radius:5px;
+								   }
+			.sec3 .subtextwrap {position:absolute; top:50%; left:75%; color:white; 
+							 transform:translateX(-50%) translateY(-50%);}
+			.sec3 .subtextwrap .title{font-size:44px;}
+			.sec3 .bodytext {width:400px; font-size:16px;}
+		</style>
+		<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+		<script type="text/javascript" src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js"></script>
+	</head>
+	<body>
+		<header>
+			<nav class='gnb'>
+				<div class='snsWrap'>
+					<i class='fa fa-facebook-square'></i>
+					<i class='fa fa-twitter-square'></i>
+					<i class='fa fa-instagram'></i>
+				</div>
+				<a href='index.html'><img class='logo' src='./images/logo.png'/></a>
+				<ul>
+					<li><a href='1.html'>Caro Emerald</a></li>
+					<li><a href='2.html'>The speakeasies' swing band</a></li>
+					<li><a href='3.html'>Room Eleven</a></li>
+				</ul>
+			</nav>
+			<div class='contain'>
+				<img class='p1' src='./images/p1.png'/>
+				<video src='./videos/caro.mp4' autoplay border='0' ></video>
+				<audio src='./audios/caro.mp3' autoplay border='0'></audio>
+				<div class='filter'></div>
+				<div class='textwrap'>
+					<p class='title'>Modern Jazz Music</p>
+					<p class='subtitle'>with three star</p>
+					<i class='fa fa-pause'></i>
+				</div>
+			</div>
+		</header>
+		<section class='sec1'>
+			<div class='solid'></div>
+			<div class='filter'></div>
+			<div class='textwrap'>
+				<p class='title'>Caro Emerald</p>
+				<p class='subtitle'><em>the shocking miss emerald</em></p>
+				<div class='more'><a href='1.html'>more</a></div>
+			</div>
+			<div class='subtextwrap'>
+				<p class='title'>beautiful voice</p>
+				<p class='bodytext'>
+					모던 스윙 재즈하면 대표적으로 떠오르는 인물로는 카로 에메랄드가 있다. 이 가수의 노래를 듣고 있으면
+					기분이 들뜨며 흥에 겨워진다.
+				</p>
+			</div>
+		</section>
+		<section class='sec2'>
+			<div class='solid'></div>
+			<div class='filter'></div>
+			<div class='textwrap'>
+				<p class='title'>The Speakeasies' Swing Band</p>
+				<p class='subtitle'><em>the shocking miss emerald</em></p>
+				<div class='more'><a href='2.html'>more</a></div>
+			</div>
+			<div class='subtextwrap'>
+				<p class='title'>Unique color</p>
+				<p class='bodytext'>
+					스피키즈 스윙 밴드만큼 독특한 색깔의 밴드는 없을 것이다. 카로 에메랄드 보다 더 악기연주에 치중되었지만,
+					오히려 더욱 재즈같은 느낌이 든다.
+				</p>
+			</div>
+		</section>
+		<section class='sec3'>
+			<div class='solid'></div>
+			<div class='filter'></div>
+			<div class='textwrap'>
+				<p class='title'>Room Eleven</p>
+				<p class='subtitle'><em>six white russians & a pink pussycat</em></p>
+				<div class='more'><a href='3.html'>more</a></div>
+			</div>
+			<div class='subtextwrap'>
+				<p class='title'>Good music</p>
+				<p class='bodytext'>
+					좋은 목소리와 좋은 음악으로 많은 사람들을 즐겁게 해주엇던 룸 일레븐. 지금은 해체되었지만 이 밴드가 남긴
+					음악들은 항상 내 재생 목록에 있다.
+				</p>
+			</div>
+		</section>
+		
+	</body>
+</html>
